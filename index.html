@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2022北京冬奥会“冰墩墩”</title>
+  <style>
+    body {
+      background-color: #eee;
+    }
+
+    .body {
+      height: 380px;
+      width: 300px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      border-radius: 50% /45% 45% 55% 55%;
+      background: #fff;
+      box-shadow: inset -10px -6px 31px -10px #ddd,
+        7px 8px 27px -5px #ddd;
+    }
+
+    .ear {
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      top: 20px;
+    }
+
+    .ear::after,
+    .ear::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      border: 30px solid black;
+      width: 0;
+      border-radius: 30px;
+      border-bottom-color: transparent;
+    }
+
+    .ear::after {
+      left: 16px;
+      border-right-color: transparent;
+      transform: rotate(-3deg);
+    }
+
+    .ear::before {
+      right: 16px;
+      border-left-color: transparent;
+      transform: rotate(3deg);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+    }
+
+    .footer::after,
+    .footer::before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      background-color: black;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .footer::after {
+      left: 55px;
+      border-top-right-radius: 40px;
+    }
+
+    .footer::before {
+      right: 55px;
+      border-top-left-radius: 40px;
+    }
+
+    .hand {
+      width: 100%;
+      position: absolute;
+      top: 40%;
+    }
+
+    .hand::after,
+    .hand::before {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 40px;
+      background-color: black;
+    }
+
+    .hand::after {
+      left: -80px;
+      top: 60px;
+      transform: rotate(-30deg);
+      border-radius: 20px 2px 50px 50px;
+    }
+
+    .hand::before {
+      right: -70px;
+      top: -60px;
+      transform: rotate(300deg);
+      border-radius: 70px 30px 40px 10px;
+    }
+
+    .love {
+      position: absolute;
+      right: -40px;
+      top: -72px;
+      width: 10px;
+      height: 10px;
+      background-color: #e64e5a;
+      transform: rotate(70deg);
+    }
+
+    .love::after,
+    .love::before {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #e64e5a;
+    }
+
+    .love::after {
+      left: -5px;
+    }
+
+    .love::before {
+      top: -5px;
+    }
+
+    .face {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 40%;
+      border-radius: 50% / 55% 55% 45% 45%;
+      border: 1px solid #4e63a7;
+      box-shadow:
+        1px 0px 0px 1px #98b7e6,
+        0px 1px 0px 3px #7098cf,
+        3px 0px 0px 6px #7baac3,
+        0px 3px 0px 10px #8ca6a7,
+        4px 0px 0px 8px #978ca6,
+        0px 3px 0px 11px #8658ba,
+        5px 0px 0px 15px #cdeba2,
+        0px 2px 0px 17px #7d517f,
+        2px 0px 0px 20px #bed1da;
+    }
+
+    .left_eye,
+    .right_eye {
+      position: absolute;
+      top: 30%;
+      width: 80px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: black;
+    }
+
+    .left_eye {
+      left: 10px;
+      transform: rotate(-56deg);
+    }
+
+    .right_eye {
+      right: 10px;
+      transform: rotate(56deg);
+    }
+
+    .left_eye::after,
+    .right_eye::after {
+      content: '';
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      width: 20px;
+      height: 15px;
+      background-color: black;
+      border-radius: 50% / 50% 45% 45% 50%;
+      box-shadow: 0 0 1px 4px #584b44,
+        0 0 1px 6px #413938,
+        0 0 1px 8px #ffffff;
+    }
+
+    .nose {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 30px;
+      border-radius: 50% / 55% 45% 45% 55%;
+      background-color: #fff;
+      box-shadow: 0 0 4px 2px #eee;
+    }
+
+    .nose::after {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      content: '';
+      width: 30px;
+      height: 20px;
+      background-color: black;
+      border-radius: 50% / 50% 45% 45% 50%;
+    }
+
+    .nose::before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 5px;
+      background-color: #fff;
+      border-radius: 50% / 50% 45% 45% 50%;
+      z-index: 2;
+    }
+
+    .mout {
+      position: absolute;
+      top: 42%;
+      left: 36%;
+      transform: translateX(-50%);
+      border: 30px solid black;
+      width: 0;
+      border-radius: 20px;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(50deg);
+    }
+
+    .mout::after {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 5px;
+      transform: translateX(-50%);
+      border: 20px solid red;
+      width: 0;
+      border-radius: 10px;
+      border-top-color: transparent;
+      border-left-color: transparent;
+    }
+    .textDesc {
+      position: absolute;
+      bottom: 37%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: red;
+    }
+    .logo {
+      position: absolute;
+      bottom: 14%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 80px;
+    }
+    .qrcode {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+    .qrcode img {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 10px auto;
+      display: block;
+    }
+  .github {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  .github svg {
+    color: #fff;
+    fill: var(--theme-color, #42b983);
+    height: 80px;
+    width: 80px;
+  }    
+  </style>
+</head>
+
+<body>
+  <div class="body">
+    <div class="ear"></div>
+    <div class="hand">
+      <div class="love"></div>
+    </div>
+    <div class="footer"></div>
+    <img src="./logo.png" class="logo" />
+    <span class="textDesc">茜琳宝贝 墩墩爱你呦</span>
+    <div class="face">
+      <div class="left_eye"></div>
+      <div class="right_eye"></div>
+      <div class="nose"></div>
+      <div class="mout"></div>
+    </div>
+  </div>
+</body>
+
+</html>
